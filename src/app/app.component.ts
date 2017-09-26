@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  
+  showButton = true;
+
+  friends = ['Bob', ' Willy', ' Cheeseburgers', ' Teriyaki'];
+  newFriend: string;
+
+  addFriend() {
+    if (!this.newFriend) return;
+    this.friends.push(this.newFriend);
+    this.newFriend = '';
+  }
+
+  removeFriends() {
+    this.friends = [];
+  }
 }
